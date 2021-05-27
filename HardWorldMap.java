@@ -9,6 +9,7 @@ public class HardWorldMap extends JFrame implements ActionListener{
 	public static final int WORLDMAPSIZE = 3;
 	public static final int WIDTH = 1280;
 	public static final int HEIGHT = 720;
+	private HardWorldMap hard = this;
 	
 	/*
 	public static void main(String[] args) {
@@ -18,7 +19,7 @@ public class HardWorldMap extends JFrame implements ActionListener{
 	}
 	*/
 	
-	public HardWorldMap() {
+	public HardWorldMap(DifficultyChooser choose) {
 		super("<HARD> Choose WorldMap!");
 		setBackground(Color.CYAN);
 		setSize(WIDTH, HEIGHT);
@@ -35,7 +36,7 @@ public class HardWorldMap extends JFrame implements ActionListener{
 		world1.addActionListener(this);
 		world1.setBounds(40, 90, 400, 500);
 		String world1FileName = "prac.png";
-		String world1IconFilePath = "C:\\Users\\¿Ã¿∫¡ˆ\\eclipse-workspace\\TeamProject\\src\\prac.png";
+		String world1IconFilePath = "C:\\Users\\Ïù¥ÏùÄÏßÄ\\eclipse-workspace\\TeamProject\\src\\prac.png";
 		ImageIcon world1Icon = new ImageIcon(world1IconFilePath);
 		world1.setIcon(world1Icon);
 		add(world1);
@@ -45,7 +46,7 @@ public class HardWorldMap extends JFrame implements ActionListener{
 		world2.addActionListener(this);
 		world2.setBounds(440, 90, 400, 500);
 		String world2FileName = "prac.png";
-		String world2IconFilePath = "C:\\Users\\¿Ã¿∫¡ˆ\\eclipse-workspace\\TeamProject\\src\\prac.png";
+		String world2IconFilePath = "C:\\Users\\Ïù¥ÏùÄÏßÄ\\eclipse-workspace\\TeamProject\\src\\prac.png";
 		ImageIcon world2Icon = new ImageIcon(world2IconFilePath);
 		world2.setIcon(world2Icon);
 		add(world2);
@@ -55,10 +56,12 @@ public class HardWorldMap extends JFrame implements ActionListener{
 		world3.addActionListener(this);
 		world3.setBounds(840, 90, 400, 500);
 		String world3FileName = "prac.png";
-		String world3IconFilePath = "C:\\Users\\¿Ã¿∫¡ˆ\\eclipse-workspace\\TeamProject\\src\\prac.png";
+		String world3IconFilePath = "C:\\Users\\Ïù¥ÏùÄÏßÄ\\eclipse-workspace\\TeamProject\\src\\prac.png";
 		ImageIcon world3Icon = new ImageIcon(world3IconFilePath);
 		world3.setIcon(world3Icon);
 		add(world3);
+		
+		setVisible(true);
 		
 	}
 
