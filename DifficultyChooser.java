@@ -66,12 +66,12 @@ public class DifficultyChooser extends JFrame implements ActionListener{
 
 		if(actionCmd.equals("Normal"))
 		{
-//			new Normal(difficult);
+			new NormalWorldMap(difficult);
 			difficult.setVisible(false);
 		}
 		else if(actionCmd.equals("Hard"))
 		{
-//			new Hard(difficult);
+			new HardWorldMap(difficult);
 			difficult.setVisible(false);
 		}
 	}
