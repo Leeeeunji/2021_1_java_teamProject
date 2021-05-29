@@ -44,15 +44,15 @@ public class DifficultyChooser extends JFrame implements ActionListener, Starter
 		JButton normal = new JButton("Normal");
 		normal.addActionListener(this);
 		normal.setBackground(Color.yellow);
-		normal.setBounds(150,300,420,300);
-		String normalFIlePath = "/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/Normal 복사본.png";
+		normal.setBounds(80,250,500,500);
+		String normalFIlePath = "/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/Normal.png";
 		ImageIcon normalIcon = new ImageIcon(normalFIlePath);
 		normal.setIcon(normalIcon);
 				
 		JButton hard = new JButton("Hard");
 		hard.addActionListener(this);
-		hard.setBounds(700,300,420,300);
-		String hardFilePath = "/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/Hard 복사본.png";
+		hard.setBounds(700,250,500,500);
+		String hardFilePath = "/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/hhard.png";
 		ImageIcon hardIcon = new ImageIcon(hardFilePath);
 		hard.setIcon(hardIcon);
 		
