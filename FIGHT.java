@@ -3,52 +3,49 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-//NORMAL모드 Play Screen
+public class FIGHT extends JFrame implements ActionListener, Starter{
 
-public class FIGHT extends JFrame implements ActionListener, Starter {
-
-// 스킬이펙트, 포션이펙트
+	FIGHT fight = this;
+	Player player;
+	Monster monster;
+	JLabel back;
+	
+	Container c;
+	
+	// 스킬이펙트, 포션이펙트
 	ImageIcon sk1, sk2, sk3, sk4, po;
-
-// 플레이어 및 몬스터 공격받을때, 아무것도안할때, 공격할때
-	ImageIcon p_attacked, p, p_attacking;
-	ImageIcon m_attacked, m, m_attacking;
-
+	
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		FIGHT f = new FIGHT();
 		f.setVisible(true);
 	}
-
-	public FIGHT() {
-
+//	MovingtoFIGHT j
+	public FIGHT()
+	{
 		setting();
-
-		ImageIcon back;
-		back = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\fight.png");
-
-		JPanel screen = new JPanel() {
-			public void paintComponent(Graphics g) {
-				g.drawImage(back.getImage(), 0, 0, null);
-				setOpaque(false);
-				super.paintComponent(g);
-			}
-		};
-		screen.setLayout(null);
-
-
-		sk1 = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		sk2 = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		sk3 = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		sk4 = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		po = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		p_attacked = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		p = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		p_attacking = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		m_attacked = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		m = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
-		m_attacking = new ImageIcon("C:\\Users\\이은지\\eclipse-workspace\\FinalTeamProject\\src\\prac.png");
+		add(player);
+		add(monster);
 		
-//스킬버튼
+//		ImageIcon back;
+//		back = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/스크린샷 2021-05-29 오후 4.11.26.png");
+//		
+//		JPanel fight = new JPanel() {
+//			public void paintComponent(Graphics g) {
+//				g.drawImage(back.getImage(), 0, 0, null);
+//				setOpaque(false);
+//				super.paintComponent(g);
+//			}
+//		};
+//		fight.setLayout(null);
+		
+		
+		sk1 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/스크린샷 2021-05-02 오후 8.06.55.png");
+		sk2 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/스크린샷 2021-05-03 오전 2.05.03.png");
+		sk3 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/스크린샷 2021-05-03 오전 2.23.39.png");
+		sk4 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/KakaoTalk_Photo_2021-05-11-16-51-47.jpeg");
+		po = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/KakaoTalk_Photo_2021-05-25-16-49-38.jpeg");
+		
 		JPanel BtnPanel = new JPanel();
 		BtnPanel.setLayout(new GridLayout(1, 4));
 
@@ -90,7 +87,7 @@ public class FIGHT extends JFrame implements ActionListener, Starter {
 		BtnPanel.add(skill4);
 
 		BtnPanel.setBounds(800, 520, 400, 100);
-		screen.add(BtnPanel);
+		add(BtnPanel);
 
 //포션 버튼		
 		JButton potion = new JButton();
@@ -101,46 +98,33 @@ public class FIGHT extends JFrame implements ActionListener, Starter {
 		// potion.setFocusPainted(false);
 		potion.setBounds(1070, 380, 125, 125);
 		potion.setIcon(po);
-		screen.add(potion);
-
-//주인공
-		JLabel player = new JLabel();
-		player.setIcon(p); //기본값
-		player.setBounds(50, 420, 200, 200);
-		screen.add(player);
-//몬스터		
-		JLabel monster = new JLabel();
-		monster.setIcon(m); //기본값
-		monster.setBounds(500, 200, 200, 200);
-		screen.add(monster);
-
-		add(screen);
+		add(potion);
+//		
+//		add(fight);
+		
+		
+		setVisible(true);
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String ac = e.getActionCommand();
-		if (ac.equals("skill1")) {
-
-		} else if (ac.equals("skill2")) {
-
-		} else if (ac.equals("skill3")) {
-
-		} else if (ac.equals("skill4")) {
-
-		} else if (ac.equals("potion")) {
-
-		} else {
-			System.err.println("버튼 선택 에러");
-		}
+		
 	}
 
 	@Override
 	public void setting() {
 		// TODO Auto-generated method stub
+		c = getContentPane();
+		back = new JLabel(new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/스크린샷 2021-05-29 오후 4.11.26.png"));
+		setLayout(null);
+		setContentPane(back);
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-		setTitle("<NORMAL> 싸워라. 이겨라");
+		setTitle("싸워라. 이겨라");	
+		player = new Player();
+		monster = new Monster();
+		
+		
 	}
-
 }

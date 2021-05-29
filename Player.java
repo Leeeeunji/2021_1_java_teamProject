@@ -3,23 +3,23 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class Monster extends JLabel{
-	Monster monster = this;
+public class Player extends JLabel{
+	Player player1 = this;
 	ImageIcon moving0, moving1, attacked, attacking;
 	boolean noattack = true;
 	boolean pattack = true;//사용자가 공격하는 
 	
-	public Monster() {
+	public Player() {
 //		moving = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/mid_term 복사본.gif");
-		moving0 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/Monster.png");
-//		moving1 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/1.png");
-//		attacked = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/아파.png");
-//		attacking = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/공격.png");
+		moving0 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/0.png");
+		moving1 = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/1.png");
+		attacked = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/아파.png");
+		attacking = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/공격.png");
 		
 		setIcon(moving0);
-		setSize(200,180);
-		setLocation(500, 200);
-//		moving();
+		setSize(150,190);
+		setLocation(50, 420);
+		moving();
 		
 	}
 	int n = 10;
