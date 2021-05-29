@@ -93,7 +93,7 @@ public class GameDemoGUI extends JFrame implements ActionListener{
 			{
 				int result = JOptionPane.showConfirmDialog(null, "입력한 아이디로 이어서 게임을 진행합니다.", "안내메세지", JOptionPane.OK_OPTION);
                 if (result == JOptionPane.OK_OPTION) {
-                	new DifficultyChooser(gamemain);
+                	new SelectSkillPortion(gamemain);
 					gamemain.setVisible(false);
                 }
                 else {
@@ -110,7 +110,7 @@ public class GameDemoGUI extends JFrame implements ActionListener{
 			{
 				int result = JOptionPane.showConfirmDialog(null, "저장된 데이터가 없으므로 새로 시작합니다.", "안내메세지", JOptionPane.OK_OPTION);
                 if (result == JOptionPane.OK_OPTION) {
-                	new DifficultyChooser(gamemain);
+                	new SelectSkillPortion(gamemain);
 					gamemain.setVisible(false);
                 }
                 else {

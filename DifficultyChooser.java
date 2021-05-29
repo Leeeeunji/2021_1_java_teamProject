@@ -17,7 +17,7 @@ public class DifficultyChooser extends JFrame implements ActionListener{
 	}
 	
 //	GameDemoGUI gui
-	public DifficultyChooser(GameDemoGUI gui)
+	public DifficultyChooser(SelectSkillPortion e)
 	{
 		
 		setTitle("Choose the difficulty");

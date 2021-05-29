@@ -3,24 +3,24 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class HardWorldMap extends JFrame implements ActionListener{
+public class NormalWorldMap extends JFrame implements ActionListener{
 	
 	private JLabel worldMapTitle;
 	public static final int WORLDMAPSIZE = 3;
 	public static final int WIDTH = 1280;
 	public static final int HEIGHT = 720;
-	private HardWorldMap hard = this;
+	private NormalWorldMap nor = this;
 	
 	/*
 	public static void main(String[] args) {
-		HardWorldMap HW = new HardWorldMap();
+		NormalWorldMap HW = new NormalWorldMap();
 		HW.setVisible(true);
 		HW.setResizable(false);
 	}
 	*/
 	
-	public HardWorldMap(DifficultyChooser choose) {
-		super("<HARD> Choose WorldMap!");
+	public NormalWorldMap(DifficultyChooser choose) {
+		super("<NORMAL> Choose WorldMap!");
 		setBackground(Color.CYAN);
 		setSize(WIDTH, HEIGHT);
 		setLayout(null);
@@ -68,14 +68,15 @@ public class HardWorldMap extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCmd = e.getActionCommand();
-		if(actionCmd.equals("C++")) {
-			
+		if(actionCmd.equals("C++")) { //여기선 각각의 클래스로 이동만 시켜주고 데미지 등의 구현사항은 이동한 클래스에서 구현
+			new MovingtoFIGHT(nor);
+			nor.setVisible(false);
 		}else if(actionCmd.equals("JAVA")) {
-
+			new MovingtoFIGHT(nor);
+			nor.setVisible(false);
 		}else if(actionCmd.equals("PYTHON")){
-			
-		}else {
-			
+			new MovingtoFIGHT(nor);
+			nor.setVisible(false);
 		}
 	}
 }
