@@ -70,12 +70,12 @@ public class SelectSkillPortion extends JFrame implements ActionListener{
 		
 		JButton Reset = new JButton("Reset");
 		Reset.addActionListener(this);
-		Reset.setBounds(750, 630, 230, 40);
+		Reset.setBounds(750, 625, 230, 35);
 		back.add(Reset);
 		
 		JButton Next = new JButton("Next");
 		Next.addActionListener(this);
-		Next.setBounds(1000, 630, 230, 40);
+		Next.setBounds(1000, 625, 230, 35);
 		back.add(Next);
 		
 		add(back);
