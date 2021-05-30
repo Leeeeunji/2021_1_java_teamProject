@@ -10,14 +10,13 @@ public class SelectSkillPortion extends JFrame implements ActionListener{
 	SelectSkillPortion s = this;
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-//		SelectSkillPortion s = new SelectSkillPortion();
-//		s.setVisible(true);
+		SelectSkillPortion s = new SelectSkillPortion();
+		s.setVisible(true);
 		
 	}
 	
 //	GameDemoGUI game
-	public SelectSkillPortion(GameDemoGUI game)
+	public SelectSkillPortion()
 	{
 		setTitle("Select Skills and Portions");
 		setSize(WIDTH, HEIGHT);
@@ -25,9 +24,8 @@ public class SelectSkillPortion extends JFrame implements ActionListener{
 		
 		JPanel back = new JPanel();
 		back.setLayout(null);
-
 		
-		JLabel skill = new JLabel("ìŠ¤í‚¬ì„ ì„ íƒí•˜ì„¸ìš”. (3ì¢… ì„ íƒ)");
+		JLabel skill = new JLabel("½ºÅ³À» ¼±ÅÃÇÏ¼¼¿ä. (3Á¾ ¼±ÅÃ)");
 		Font f = new Font("Monospaced", Font.ITALIC|Font.PLAIN, 13);
 		skill.setForeground(Color.black);
 		skill.setFont(f);
@@ -42,7 +40,7 @@ public class SelectSkillPortion extends JFrame implements ActionListener{
 		skillPanel.setBounds(60,55,800,320);
 		back.add(skillPanel);
 		
-		JLabel portion = new JLabel("í¬ì…˜ì„ ì„ íƒí•˜ì„¸ìš”. (1ì¢…)");
+		JLabel portion = new JLabel("Æ÷¼ÇÀ» ¼±ÅÃÇÏ¼¼¿ä. (1Á¾)");
 		portion.setForeground(Color.black);
 		portion.setFont(f);
 		portion.setBounds(890,20,150,50);
@@ -55,7 +53,7 @@ public class SelectSkillPortion extends JFrame implements ActionListener{
 		portionPanel.setBounds(890,55,320,320);
 		back.add(portionPanel);
 		
-		JLabel select = new JLabel("ì„ íƒëœ ìŠ¤í‚¬ê³¼ í¬ì…˜");
+		JLabel select = new JLabel("¼±ÅÃµÈ ½ºÅ³°ú Æ÷¼Ç");
 		select.setForeground(Color.black);
 		select.setFont(f);
 		select.setBounds(60,380,150,50);
