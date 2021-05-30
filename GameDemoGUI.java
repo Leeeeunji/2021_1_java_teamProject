@@ -5,6 +5,8 @@ import javax.swing.event.*;
 
 public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 
+//	public static final int WINDOW_WIDTH = 1280;//1000
+//	public static final int WINDOW_HEIGHT = 720;//500
 	public JTextField name;
 	public JPanel Difficulty;
 	GameDemoGUI gamemain = this;
@@ -19,10 +21,9 @@ public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 	}
 	
 	public GameDemoGUI() {
-		
 		setting();
 		JPanel main = new JPanel();
-		ImageIcon back = new ImageIcon("C:\\Users\\ÀÌÀºÁö\\eclipse-workspace\\FinalTeamProject\\src\\start_background.png");
+		ImageIcon back = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/mainbackground.png");
 		
 		JPanel screen = new JPanel() {
 			public void paintComponent(Graphics g) {
@@ -57,7 +58,7 @@ public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 //		namePanel.add(name);
 		
 //		namePanel.setBounds(300, 300, 500, 100);
-		name.setBounds(495, 393, 350, 50);
+		name.setBounds(495, 430, 350, 50);
 		screen.add(name);
 		
 		JButton start = new JButton();
@@ -66,9 +67,11 @@ public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 		//start.setBorderPainted(false);
 		start.setContentAreaFilled(false);
 		//start.setFocusPainted(false);
-		start.setBounds(470, 460, 150, 107);
-		ImageIcon startBtn = new ImageIcon("C:\\Users\\ÀÌÀºÁö\\eclipse-workspace\\FinalTeamProject\\src\\startBtn.png");
+		start.setBounds(470, 510, 150, 107);
+		ImageIcon startBtn = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/startbut.png");
 		start.setIcon(startBtn);
+		start.setBorderPainted(false);
+		start.setContentAreaFilled(false);
 		screen.add(start);
 		
 		JButton help = new JButton();
@@ -77,15 +80,18 @@ public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 		//help.setBorderPainted(false);
 		help.setContentAreaFilled(false);
 		//help.setFocusPainted(false);
-		help.setBounds(640, 460, 150, 107);
-		ImageIcon helpBtn = new ImageIcon("C:\\Users\\ÀÌÀºÁö\\eclipse-workspace\\FinalTeamProject\\src\\help.png");
+		help.setBounds(640, 510, 150, 107);
+		ImageIcon helpBtn = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/helpbut.png");
 		help.setIcon(helpBtn);
+		help.setBorderPainted(false);
+		help.setContentAreaFilled(false);
 		screen.add(help);
 	
 		add(screen);
 		
 		setVisible(true);
-		//¿©±â±îÁö°¡ screen panelÀÔ´Ï´Ù~ ²ó¿õ
+		//ì—¬ê¸°ê¹Œì§€ê°€ screen panelì…ë‹ˆë‹¤~ ë€¨ì›…
+		//ì—¬ê¸°ê¹Œì§€ê°€ main panelì…ë‹ˆë‹¤~ ë€¨ì›…
 		
 	}
 
@@ -105,13 +111,13 @@ public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 			tname = name.getText();
 			if(tname.equals("1"))
 			{
-				int result = JOptionPane.showConfirmDialog(null, "ÀÔ·ÂÇÑ ¾ÆÀÌµğ·Î ÀÌ¾î¼­ °ÔÀÓÀ» ÁøÇàÇÕ´Ï´Ù.", "¾È³»¸Ş¼¼Áö", JOptionPane.OK_OPTION);
+				int result = JOptionPane.showConfirmDialog(null, "ì…ë ¥í•œ ì•„ì´ë””ë¡œ ì´ì–´ì„œ ê²Œì„ì„ ì§„í–‰í•©ë‹ˆë‹¤.", "ì•ˆë‚´ë©”ì„¸ì§€", JOptionPane.OK_OPTION);
                 if (result == JOptionPane.OK_OPTION) {
-                	new SelectSkillPortion();
-					setVisible(false);
+                	new SelectSkillPortion();//gamemain
+					gamemain.setVisible(false);
                 }
                 else {
-                	System.out.println("»õ·Î¿î ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                	System.out.println("ìƒˆë¡œìš´ ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
                 	
                 }
 //				IDExists exist = new IDExists();
@@ -122,14 +128,14 @@ public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 			}
 			else if(tname.equals("0"))
 			{
-				int result = JOptionPane.showConfirmDialog(null, "ÀúÀåµÈ µ¥ÀÌÅÍ°¡ ¾øÀ¸¹Ç·Î »õ·Î ½ÃÀÛÇÕ´Ï´Ù.", "¾È³»¸Ş¼¼Áö", JOptionPane.OK_OPTION);
+				int result = JOptionPane.showConfirmDialog(null, "ì €ì¥ëœ ë°ì´í„°ê°€ ì—†ìœ¼ë¯€ë¡œ ìƒˆë¡œ ì‹œì‘í•©ë‹ˆë‹¤.", "ì•ˆë‚´ë©”ì„¸ì§€", JOptionPane.OK_OPTION);
                 if (result == JOptionPane.OK_OPTION) {
                 	new SelectSkillPortion();
-					setVisible(false);
+					gamemain.setVisible(false);
                 }
                 else {
-                	System.out.println("»õ·Î¿î ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼"
-                			+ "¿ä.");
+                	System.out.println("ìƒˆë¡œìš´ ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸"
+                			+ "ìš”.");
                 	
                 }
 //				IDNotExists nexist = new IDNotExists();
@@ -147,67 +153,9 @@ public class GameDemoGUI extends JFrame implements ActionListener, Starter{
 	@Override
 	public void setting() {
 		// TODO Auto-generated method stub
+		setTitle("ìë°” ì¡ì•„!!");
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-		setTitle("ÀÚ¹Ù Àâ¾Æ!!");
+		setBackground(Color.WHITE);
 	}
-	
-//	private class IDExists extends JFrame implements ActionListener {
-//		public IDExists() {
-//			setSize(300, 200);
-//			getContentPane().setBackground(Color.LIGHT_GRAY);
-//			setLayout(new BorderLayout());
-//			JLabel confirmLabel = new JLabel("ÀÔ·ÂÇÑ ¾ÆÀÌµğ·Î ÀÌ¾î¼­ °ÔÀÓÀ» ÁøÇàÇÕ´Ï´Ù.");
-//			add(confirmLabel, BorderLayout.CENTER);
-//			
-//			JPanel btnPanel = new JPanel();
-//			btnPanel.setBackground(Color.WHITE);
-//			btnPanel.setLayout(new FlowLayout());
-//
-//			JButton confirmBtn = new JButton("Start!");
-//			confirmBtn.addActionListener(this);
-//			btnPanel.add(confirmBtn);
-//
-//			add(btnPanel, BorderLayout.SOUTH);
-//		}
-//
-//		@Override
-//		public void actionPerformed(ActionEvent e) {
-//			String actionCmd = e.getActionCommand();
-//			if (actionCmd.equals("Start!")) {
-//				dispose();
-//			} else
-//				System.err.println("Unexpected Error" + " in Confirm Window");
-//		}
-//	} // end of IDExists
-//	
-//	private class IDNotExists extends JFrame implements ActionListener {
-//		public IDNotExists() {
-//			setSize(300, 200);
-//			getContentPane().setBackground(Color.LIGHT_GRAY);
-//			setLayout(new BorderLayout());
-//			JLabel confirmLabel = new JLabel("ÀúÀåµÈ µ¥ÀÌÅÍ°¡ ¾øÀ¸¹Ç·Î »õ·Î ½ÃÀÛÇÕ´Ï´Ù.");
-//			add(confirmLabel, BorderLayout.CENTER);
-//			
-//
-//			JPanel btnPanel = new JPanel();
-//			btnPanel.setBackground(Color.WHITE);
-//			btnPanel.setLayout(new FlowLayout());
-//
-//			JButton confirmBtn = new JButton("Start!");
-//			confirmBtn.addActionListener(this);
-//			btnPanel.add(confirmBtn);
-//
-//			add(btnPanel, BorderLayout.SOUTH);
-//		}
-//
-//		@Override
-//		public void actionPerformed(ActionEvent e) {
-//			String actionCmd = e.getActionCommand();
-//			if (actionCmd.equals("Start!")) {
-//				result = 1;
-//				setVisible(false);
-//			} else
-//				System.err.println("Unexpected Error" + " in Confirm Window");
-//		}
-//	} // end of IDExists
 }
+	
