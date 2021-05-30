@@ -1,12 +1,12 @@
 import java.io.Serializable;
 public class User implements Serializable {
 	private String id; //아이디
-	private int score;	//학점
+	private double score;	//학점
 	public User() {
-		score = 0;
+		score = 0.0;
 		id = "";
 	}
-	public User(int theNumber, String theLetter) {
+	public User(double theNumber, String theLetter) {
 		score = theNumber;
 		id = theLetter;
 	}
