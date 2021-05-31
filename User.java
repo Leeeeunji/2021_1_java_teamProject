@@ -1,7 +1,7 @@
 import java.io.Serializable;
 public class User implements Serializable {
-	private String id; //¾ÆÀÌµğ
-	private double score;	//ÇĞÁ¡
+	private String id; //Â¾Ã†Ã€ÃŒÂµÃ°
+	private double score;	//Ã‡ÃÃÂ¡
 	public User() {
 		score = 0.0;
 		id = "";
@@ -11,8 +11,8 @@ public class User implements Serializable {
 		id = theLetter;
 	}
 	public String toString() {
-		return "id : " + score
-				+ " score : " + id;
+		return "score : " + score
+				+ " id : " + id;
 	}
 	
 	public String getId() {

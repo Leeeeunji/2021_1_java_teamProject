@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class MovingtoFIGHT extends JFrame {
+public class MovingtoFIGHT extends JFrame{
 
 	public static final int WINDOW_WIDTH = 1280;//1000
 	public static final int WINDOW_HEIGHT = 720;//500
@@ -14,6 +14,7 @@ public class MovingtoFIGHT extends JFrame {
 	ImageIcon character;
 	
 	MovingtoFIGHT f = this;
+	SelectSkillPortion m;
 
 	
 	public static void main(String[] args) {
@@ -21,10 +22,11 @@ public class MovingtoFIGHT extends JFrame {
 //		MovingtoFIGHT m = new MovingtoFIGHT();
 //		m.setVisible(true);
 	}
-	
-	public MovingtoFIGHT(NormalWorldMap n)
+	//NormalWorldMap n
+	public MovingtoFIGHT(SelectSkillPortion menu, String monster)
 	{
-		setTitle("Choose the difficulty");
+		setTitle("전투 지역으로 이동 중.....");
+		m = menu;
 		
 		main = new JLabel();
 		back = new ImageIcon("/Users/silver/Downloads/ezgif.com-resize.gif");
@@ -44,8 +46,8 @@ public class MovingtoFIGHT extends JFrame {
 					try {
 						Thread.sleep(1000);
 						n++;
-						if(n==7) {
-							new FIGHT(f);
+						if(n==6) {
+							new FIGHT(m, monster);
 							f.setVisible(false);
 						}
 					} catch (InterruptedException e) {

@@ -9,55 +9,60 @@ public class DifficultyChooser extends JFrame implements ActionListener, Starter
 //	public static final int WINDOW_HEIGHT = 720;//500
 	
 	private DifficultyChooser difficult = this;
+	public SelectSkillPortion m;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		DifficultyChooser d = new DifficultyChooser();
-		d.setVisible(true);
+//		DifficultyChooser d = new DifficultyChooser();
+//		d.setVisible(true);
 	}
 	
 //	SelectSkillPortion e
-	public DifficultyChooser()
+	public DifficultyChooser(SelectSkillPortion menu)
 	{
+		m = menu;
+		
 		setting();
 		
-//		ImageIcon back;
-//		back = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/gggg.jpg");
-//		
-//		JPanel Difficulty = new JPanel() {
-//			public void paintComponent(Graphics g) {
-//				g.drawImage(back.getImage(), 0, 0, null);
-//				setOpaque(false);
-//				super.paintComponent(g);
-//			}
-//		};
-		JPanel Difficulty = new JPanel();
-		Difficulty.setBackground(Color.white);
-		Difficulty.setLayout(null);
+		ImageIcon back;
+		back = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/difficultselectbackground.png");
 		
-		JLabel diff = new JLabel("Select Difficulty");
-		Font f = new Font("Monospaced", Font.BOLD|Font.ITALIC, 30);
-		diff.setForeground(Color.BLACK);
-		diff.setFont(f);
-		diff.setBounds(500,50,400,100);
+		JPanel Difficulty = new JPanel() {
+			public void paintComponent(Graphics g) {
+				g.drawImage(back.getImage(), 0, 0, null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		Difficulty.setLayout(null);
+//		
+//		JLabel diff = new JLabel("Select Difficulty");
+//		Font f = new Font("Monospaced", Font.BOLD|Font.ITALIC, 30);
+//		diff.setForeground(Color.BLACK);
+//		diff.setFont(f);
+//		diff.setBounds(500,50,400,100);
 		
 		JButton normal = new JButton("Normal");
 		normal.addActionListener(this);
 		normal.setBackground(Color.yellow);
-		normal.setBounds(80,250,500,500);
+		normal.setBounds(80,200,500,500);
 		String normalFIlePath = "/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/Normal.png";
 		ImageIcon normalIcon = new ImageIcon(normalFIlePath);
 		normal.setIcon(normalIcon);
+		normal.setBorderPainted(false);
+		normal.setContentAreaFilled(false);
 				
 		JButton hard = new JButton("Hard");
 		hard.addActionListener(this);
-		hard.setBounds(700,250,500,500);
+		hard.setBounds(700,200,500,500);
 		String hardFilePath = "/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/hhard.png";
 		ImageIcon hardIcon = new ImageIcon(hardFilePath);
 		hard.setIcon(hardIcon);
+		hard.setBorderPainted(false);
+		hard.setContentAreaFilled(false);
 		
 		
-		Difficulty.add(diff);
+//		Difficulty.add(diff);
 		Difficulty.add(normal);
 		Difficulty.add(hard);
 		
@@ -73,12 +78,12 @@ public class DifficultyChooser extends JFrame implements ActionListener, Starter
 
 		if(actionCmd.equals("Normal"))
 		{
-			new NormalWorldMap();
+			new NormalWorldMap(m);
 			difficult.setVisible(false);
 		}
 		else if(actionCmd.equals("Hard"))
 		{
-			new HardWorldMap();
+			new HardWorldMap(m);
 			difficult.setVisible(false);
 		}
 	}

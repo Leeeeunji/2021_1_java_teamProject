@@ -12,6 +12,7 @@ public class MovingtoFIGHTH extends JFrame{
 	JLabel sub;
 	ImageIcon back;
 	ImageIcon character;
+	public SelectSkillPortion m;
 	
 	MovingtoFIGHTH f = this;
 
@@ -22,9 +23,10 @@ public class MovingtoFIGHTH extends JFrame{
 //		m.setVisible(true);
 	}
 	//NormalWorldMap n
-	public MovingtoFIGHTH()
+	public MovingtoFIGHTH(SelectSkillPortion menu, String monster)
 	{
 		setTitle("전투 지역으로 이동 중.....");
+		m = menu;
 		
 		main = new JLabel();
 		back = new ImageIcon("/Users/silver/Documents/knu_term_0201/Java Programming/eclipse-workspace/Project/ezgif.com-resize-2.gif");
@@ -45,7 +47,7 @@ public class MovingtoFIGHTH extends JFrame{
 						Thread.sleep(1000);
 						n++;
 						if(n==6) {
-							new FIGHT();
+							new fightScreen(m, monster);
 							f.setVisible(false);
 						}
 					} catch (InterruptedException e) {
